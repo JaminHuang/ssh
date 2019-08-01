@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--  指定spring负责action创建  -->
+    <constant name="struts.objectFactory" value="spring" />
+    <!--  所有匹配*.action的请求都有Struts2处理  -->
+    <constant name="struts.action.extension" value="action" />
+    <!--  是否启用开发者模式  -->
+    <constant name="struts.devMode" value="true" />
+    <!--  是否重新加载  -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!--  设置浏览器缓存静态内容  -->
+    <constant name="struts.serve.static.browserCache" value="true" />
+    <!--  请求参数的编码方式  -->
+    <constant name="struts.i18n.encoding" value="utf-8" />
+    <!--  文件上传最大值  -->
+    <constant name="struts.multipart.maxSize" value="104857600" />
+    <!--  动态调用方式，使用叹号访问方法  -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <!--  Action名称中是否使用斜线  -->
+    <constant name="struts.enable.SlashesInActionNames" value="false" />
+    <!--  允许标签中使用表达式语法  -->
+    <constant name="struts.tag.altSyntax" value="true" />
+    <!--  对于WebLogic，Orion属性设置为ture  -->
+    <constant name="struts.dispatcher.parametersWorkaround" value="true" />
+
+    <package name="basePackage" extends="struts-default" >
+        <action name="book" class="com.action.BookAction">
+            <result name="list">/pages/list.jsp</result>
+        </action>
+    </package>
+</struts>
